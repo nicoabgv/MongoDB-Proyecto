@@ -1,0 +1,88 @@
+
+GET http://localhost:3000/api/users
+
+
+###
+PUT http://localhost:3000/api/users/micrreo2@correo.es
+Content-Type: application/json
+
+{
+    "name": "Marcos",
+    "email": "micrreo2@correo.es",
+    "age":37,
+    "password": "12345",
+    "role": "admin"
+}
+
+###
+DELETE http://localhost:3000/api/users/micrreo267@correo.es
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/storage HTTP/1.1
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="image2.png"
+Content-Type: image/png
+
+< ./image/image2.png
+--boundary123--
+
+###
+POST http://localhost:3000/api/storage HTTP/1.1
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="jaime_hola.zip"
+Content-Type: image/png
+
+< ./image/jaime_hola.zip
+--boundary123--
+
+###
+GET http://localhost:3000/api/users
+
+###
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "pablo",
+    "email": "micrreo267@correo.es"
+}
+
+###
+
+###
+DELETE http://localhost:3000/api/users/jaime
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/api/tracks
+
+###
+DELETE http://localhost:3000/api/tracks/5f9b3b3b3b3b3b3b3b3b3b3b
+
+
+
+###
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "jaimecccc",
+    "age": 18,
+    "email": "jaime@correo.com",
+    "password": "987654321"
+}
+
+###
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "jaime@correo.com",
+    "password": "987654321"
+}
